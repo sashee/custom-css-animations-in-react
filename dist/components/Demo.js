@@ -17,10 +17,10 @@ var Demo = React.createClass({
 			return _this.state.reversed ? 1 - time : time;
 		};
 		var animationFunction2X = function animationFunction2X(time) {
-			return Math.sin((_this.state.reversed ? 1 - time : time) * Math.PI * 2);
+			return (1 + Math.sin((_this.state.reversed ? 1 - time : time) * Math.PI * 2)) / 2;
 		};
 		var animationFunction2Y = function animationFunction2Y(time) {
-			return Math.cos((_this.state.reversed ? 1 - time : time) * Math.PI * 2);
+			return (1 + Math.cos((_this.state.reversed ? 1 - time : time) * Math.PI * 2)) / 2;
 		};
 
 		return React.createElement(
