@@ -14,10 +14,10 @@ const Demo = React.createClass({
 			return this.state.reversed ? 1 - time : time;
 		};
 		const animationFunction2X = (time) => {
-			return Math.sin((this.state.reversed ? 1 - time : time)  * Math.PI * 2);
+			return (1 + Math.sin((this.state.reversed ? 1 - time : time)  * Math.PI * 2)) / 2;
 		};
 		const animationFunction2Y = (time) => {
-			return Math.cos((this.state.reversed ? 1 - time : time)  * Math.PI * 2);
+			return (1 + Math.cos((this.state.reversed ? 1 - time : time)  * Math.PI * 2)) / 2;
 		};
 
 		return (

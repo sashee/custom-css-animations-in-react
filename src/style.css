@@ -1,12 +1,6 @@
 .line {
 	height: 120px;
 }
-.circular {
-	width: 250px;
-	height: 250px;
-	padding-top: 120px;
-	padding-left: 120px;
-}
 
 .AnimatedElement{
 	width: 20px;
