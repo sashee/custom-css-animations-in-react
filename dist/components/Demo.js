@@ -41,6 +41,7 @@ var Demo = React.createClass({
 					"div",
 					{ className: "line" },
 					React.createElement(AnimatedElement, {
+						key: this.state.reversed /* This is actually a dirty hack to reset the animation when the direction changes */,
 						animationFunctionX: animationFunction1,
 						animationFunctionY: animationFunction1
 					})
@@ -50,6 +51,7 @@ var Demo = React.createClass({
 					"div",
 					{ className: "circular" },
 					React.createElement(AnimatedElement, {
+						key: this.state.reversed,
 						animationFunctionX: animationFunction2X,
 						animationFunctionY: animationFunction2Y
 					})

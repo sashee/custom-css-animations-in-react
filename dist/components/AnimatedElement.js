@@ -8,9 +8,10 @@ var AnimatedElement = React.createClass({
 		animationFunctionY: React.PropTypes.func.isRequired
 	},
 	getInitialState: function getInitialState() {
-		var random = Math.random().toString().substring(2);
+		var random = Math.round(Math.random() * 10000000);
 		var style = document.createElement("style");
-		var css = "@keyframes animation_" + random + " {\n\t\t\t" + _.map(_.range(0, 100), function (index, idx, list) {
+		var keyframesNums = URI(window.location.search).search(true).keyframesNum || 100;
+		var css = "@keyframes animation_" + random + " {\n\t\t\t" + _.map(_.range(0, keyframesNums), function (index, idx, list) {
 			return Math.round(index / (list.length - 1) * 100) + "% {}";
 		}).join("\n") + "\n\t\t}";
 
