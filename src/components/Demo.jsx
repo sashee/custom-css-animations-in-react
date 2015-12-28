@@ -30,6 +30,7 @@ const Demo = React.createClass({
 				This box moves along a line: (x: linear, y: linear)
 					<div className="line">
 						<AnimatedElement
+							key={this.state.reversed /* This is actually a dirty hack to reset the animation when the direction changes */}
 							animationFunctionX={animationFunction1}
 							animationFunctionY={animationFunction1}
 						/>
@@ -37,6 +38,7 @@ const Demo = React.createClass({
 					This box moves along a circle: (x: sine, y: cosine)
 					<div className="circular">
 						<AnimatedElement
+							key={this.state.reversed}
 							animationFunctionX={animationFunction2X}
 							animationFunctionY={animationFunction2Y}
 						/>

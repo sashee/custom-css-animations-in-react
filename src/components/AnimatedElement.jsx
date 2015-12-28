@@ -6,10 +6,11 @@ const AnimatedElement = React.createClass({
 		animationFunctionY: React.PropTypes.func.isRequired
 	},
 	getInitialState() {
-		const random = Math.random().toString().substring(2);
+		const random = Math.round(Math.random() * 10000000);
 		const style = document.createElement("style");
+		const keyframesNums = URI(window.location.search).search(true).keyframesNum || 100;
 		const css = `@keyframes animation_${random} {
-			${_.map(_.range(0, 100), (index, idx, list) => {
+			${_.map(_.range(0, keyframesNums), (index, idx, list) => {
 				return `${Math.round(index / (list.length - 1) * 100)}% {}`;
 			}).join("\n")}
 		}`;
